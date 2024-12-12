@@ -1,0 +1,11 @@
+Package: blackjack
+Type: Package
+Title: Blackjack Game
+Version: 0.1.0
+Author: Your Name
+Maintainer: Your Name <your.email@example.com>
+Description: A package to play Blackjack, including a Shiny application.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr, shiny
