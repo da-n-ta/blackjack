@@ -4,6 +4,7 @@ library(dplyr)
 #source("Cartes_et_Deck.R")
 
 #Fonction d'initialisation du jeu
+#' @export
 initialize_game <- function(){
   # Creer et melanger le deck de blackjack
   blackjack_deck_init <- create_blackjack_deck(6)
@@ -31,6 +32,7 @@ initialize_game <- function(){
 }
 
 #Fontion d'affichage du statut de la partie
+#' @export
 display_game <- function(player_hand, dealer_hand, end_game){
   # afficher la main du dealer
   display_hand(dealer_hand, "Dealer")
@@ -54,6 +56,7 @@ if(end_game){
 }
   cat("----------------------\n")
 }
+#' @export
 input_player <- function(player_choice,blackjack_deck,player_hand,dealer_hand){
  if (player_choice=="hit"){
   result<- take_a_card(blackjack_deck,player_hand)
@@ -69,6 +72,7 @@ input_player <- function(player_choice,blackjack_deck,player_hand,dealer_hand){
   return (list(blackjack_deck,player_hand,dealer_hand,TRUE))
 }
 
+#' @export
 input_terminal<- function(){
   
     cat("Do you want to take a new card? Press Y or N.\n")
@@ -89,6 +93,7 @@ input_terminal<- function(){
 }
 
 # definir la fonction jeu
+#' @export
 jeu <- function() {
   init <- initialize_game()
   blackjack_deck <- init[[1]]

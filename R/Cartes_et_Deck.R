@@ -37,6 +37,7 @@ print.Card <- function(card,...) {
 }
 
 # Creer des class S3 pour "Deck" qui contient plusieurs cartes
+#' @export
 Deck <- function(cards = list()) {
   structure(list(cards = cards), class = "Deck")
 }
@@ -51,6 +52,7 @@ shuffle.Deck <- function(deck) {
 
 
 # Fonction pour creer le deck
+#' @export
 create_deck_52 <- function() {
   cards <- list()
   for (suit in suits) {
@@ -62,6 +64,7 @@ create_deck_52 <- function() {
 }
 
 # Fonction pour joindre plusieurs decks dans un seul
+#' @export
 concatene_decks <- function(decks) {
   all_cards <- list()
   for (deck in decks) {
@@ -71,6 +74,7 @@ concatene_decks <- function(decks) {
 }
 
 # fct pour creer un deck pour blackjack (6xdeck)
+#' @export
 create_blackjack_deck <- function(num_decks = 6) {
   # Creer un seul deck
   deck_52 <- create_deck_52()
@@ -81,6 +85,7 @@ create_blackjack_deck <- function(num_decks = 6) {
 
 
 # fct pour calculer la valeur de la main
+#' @export
 hand_value <- function(hand) {
   value <- 0
   aces <- 0
@@ -104,11 +109,13 @@ hand_value <- function(hand) {
 }
 
 # fct pour creer un main vide (un deck sans cartes)
+#' @export
 create_empty_hand <- function() {
   return(Deck(list()))
 }
 
 # fct pour prendre un carte du deck et la donner au joueur ou au dealer
+#' @export
 take_a_card <- function(pile, hand) {
   new_card <- pile$cards[[1]]
   pile$cards <- pile$cards[-1]
@@ -118,6 +125,7 @@ take_a_card <- function(pile, hand) {
 
 
 # fct pour montrer les cartes ds la main du joueur
+#' @export
 display_hand <- function(hand, name = "Player") {
   cat("The", name, "hand: ")
   for (card in hand$cards) {
