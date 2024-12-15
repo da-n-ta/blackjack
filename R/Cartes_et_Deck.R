@@ -1,6 +1,7 @@
 library(dplyr)
 
 #definir une fct avec use method (pour utiliser explicitemnet le single dispatching)
+#' @export
 shuffle = function(obj, ...) UseMethod("shuffle")
 
 #definir suits et ranks
@@ -25,10 +26,12 @@ dico_card_value <- c(
 )
 
 # Creer des classes S3 pour "Card"
+#' @export
 Card <- function(suit, rank) {
   structure(list(suit = suit, rank = rank), class = "Card")
 }
 
+#' @export
 print.Card <- function(card,...) {
   cat(card$suit, ": ", card$rank)
 }
@@ -41,6 +44,7 @@ Deck <- function(cards = list()) {
 
 
 #fct pour melanger le deck (on appelle la fct shuffle definie avant)
+#' @export
 shuffle.Deck <- function(deck) {
   Deck(sample(deck$cards))
 }

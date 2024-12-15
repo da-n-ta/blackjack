@@ -9,3 +9,4 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: dplyr, shiny
+RoxygenNote: 7.3.2
