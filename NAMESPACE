@@ -3,3 +3,5 @@ import(dplyr)
 import(shiny)
 export(shuffle)
 export(shuffle.Deck)
+export(run_blackjack)
+
